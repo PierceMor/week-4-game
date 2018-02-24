@@ -1,0 +1,23 @@
+body {
+    align-content: center;
+}
+
+.col-12 {
+    text-align: center;
+}
+
+img  {
+    float: left;
+    position: relative;
+    height: 50%;
+    width: 50%;
+    margin: 15px;
+}
+
+.img-thumbnail {
+    border: 0px none white;
+}
+
+button {
+    margin: 15px;
+}
