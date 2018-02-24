@@ -21,3 +21,7 @@ img  {
 button {
     margin: 15px;
 }
+
+h3 {
+    vertical-align: bottom;
+}

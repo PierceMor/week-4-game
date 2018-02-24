@@ -1,21 +1,126 @@
 $(document).ready(function(){
 
-    //score that player must reach 
-    var patientsHealth = Math.floor(Math.random()*100 +1); 
+    //represents players input
+    var player = 0;
 
     //scoreboard
     var wins = 0;
-    var lifesLeft = 4; 
+    var patientsKilled = 0; 
+
+    //gets a new game 
+    function newGame() {
+        
+
+        // Zeroes out player score 
+        player = 0; 
+
+        //score that player must reach 
+        var patientsHealth = Math.floor(Math.random()*100 +21); 
+
+        //value of the randomized buttons
+        var bottle1 = Math.floor(Math.random() * 9 + 1);
+        var bottle2 = Math.floor(Math.random() * 9 + 1);
+        var bottle3 = Math.floor(Math.random() * 9 + 1);
+        var bottle4 = Math.floor(Math.random() * 9 + 1);
+
+            //Puts the score board up
+            $("#health").text(patientsHealth);
+            $("#playerScore").text(player);
+            $("#saved").text(wins);
+            $("#lost").text(patientsKilled);
+
+        //Atempt at simplifying the code and making less redundant
+        //   $("#bottle1", "#bottle2", "#bottle3", "#bottle4").on('click', function(){
+        //      player = player + bottle1, bottle2, bottle3, bottle4; 
+        //      console.log("current score" + player);
+        //      $("#playerscore").text(player + bottle1, bottle2, bottle3, bottle4);
+        //   });
+            
 
 
-    //value of the randomized buttons
-    var bottle1 = Math.floor(Math.random() * 9 + 1);
-    var bottle2 = Math.floor(Math.random() * 9 + 1);
-    var bottle3 = Math.floor(Math.random() * 9 + 1);
-    var bottle4 = Math.floor(Math.random() * 9 + 1);
+        //redundent code, has to be a simpler way 
+        //function for first button
+        $("#bottle1").click(function(){
 
-    //Puts the score board up
-    $("#health").text(patientsHealth);
-    $("#saved").text(wins);
-    $("#lost").text(lifesLeft);
+            //adds the randomize number to players score upon button press
+            //button will be logged onto console and added to HTML
+            player = player + bottle1; 
+            console.log(bottle1);
+            $("#playerScore").text(player);
+
+            if (player === patientsHealth){
+                wins ++;
+                newGame();
+            } else if ( player > patientsHealth){
+                patientsKilled++; 
+                newGame();
+            }
+
+        });
+
+        //function for 2nd button
+        $("#bottle2").click(function(){
+
+            player = player + bottle2;
+            console.log(bottle2);
+            $("#playerScore").text(player);
+
+            if (player === patientsHealth){
+                wins ++;
+                newGame();
+            } else if ( player > patientsHealth){
+                patientsKilled++; 
+                newGame();
+            }
+        });
+        
+
+        //function for 3rd button
+        $("#bottle3").click(function(){
+
+            player = player + bottle3;
+            console.log(bottle3);
+            $("#playerScore").text(player);
+
+            if (player === patientsHealth){
+                wins ++;
+                newGame();
+            } else if ( player > patientsHealth){
+                patientsKilled++; 
+                newGame();
+            }
+
+        });
+
+        //function for the last button
+        $("#bottle4").click(function(){
+
+            player = player + bottle4;
+            console.log(bottle4);
+            $("#playerScore").text(player);
+
+            if (player === patientsHealth){
+                wins ++;
+                newGame();
+            } else if ( player > patientsHealth){
+                patientsKilled++; 
+                newGame();
+            }
+
+        });
+            
+    $("#clearButton").click(function(){
+        newGame();
+    });
+
+        //have players score equal the patients "Health"
+     //   if (player === patientsHealth){
+     //       wins ++;
+     //       newGame();
+     //   } else if ( player > patientsHealth){
+    //        patientsKilled++; 
+     //       newGame();
+   //     }
+    }
+    newGame();
 });
