@@ -1,9 +1,19 @@
 body {
     align-content: center;
+    background: rgb(81, 209, 209);
 }
 
 .col-12 {
     text-align: center;
+}
+
+h1 {
+    color: lightblue;
+    font-weight: bolder;
+    text-transform: uppercase;
+    font-size: 100px;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+
 }
 
 img  {
@@ -14,6 +24,12 @@ img  {
     margin: 15px;
 }
 
+#patient img {
+    height: 400px;
+    width: 400px;
+}
+
+
 .img-thumbnail {
     border: 0px none white;
 }
@@ -22,6 +38,20 @@ button {
     margin: 15px;
 }
 
+    button:hover{
+
+        color: #00d2ff;
+        box-shadow: 0 27px 55px rgba(0,0,0,0.3), 0 17px 17px rgba(0,0,0,0.15),
+         0 0 0 1px rgba(0,0,0,0);
+        border-style:none; 
+    }
+
+
 h3 {
-    vertical-align: bottom;
+    vertical-align: baseline;
+}
+
+#bottleimg {
+    height: 100px;
+    width: 60px;
 }

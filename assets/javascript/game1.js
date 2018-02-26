@@ -1,5 +1,13 @@
 $(document).ready(function(){
 
+    var computerPatient = [
+        "assets/images/anime.png", 
+        "assets/images/bacta-tank1.jpg", 
+        "assets/images/lego.png",
+        "assets/images/otherPatient.jpg", 
+        "assets/images/sickKid.png",
+    ];
+
     //represents players input
     var player = 0;
 
@@ -7,21 +15,37 @@ $(document).ready(function(){
     var wins = 0;
     var patientsKilled = 0; 
 
+    function pictureTime() {
+        //picks patients picture
+        var thePatient = computerPatient[Math.floor(Math.random() * computerPatient.length)];
+        $("#patient").html("<img class='img-fluid img-thumbnail' alt='Luke In Bacta Tank' src=" + thePatient + ">")
+
+        
+        //working text
+        //    $("#patient").append("<img src=" + thePatient + ">");
+        //$('#patient').html('<img src="assets/images/anime.png"/>')
+        console.log(thePatient);
+        console.log(this);
+      //  document.patient.src = computerPatient[thePatient];
+    }
+
     //gets a new game 
     function newGame() {
         
+        pictureTime();
+
 
         // Zeroes out player score 
         player = 0; 
 
         //score that player must reach 
-        var patientsHealth = Math.floor(Math.random()*100 +21); 
+        var patientsHealth = Math.floor(Math.random()* 101 + 19); 
 
         //value of the randomized buttons
-        var bottle1 = Math.floor(Math.random() * 9 + 1);
-        var bottle2 = Math.floor(Math.random() * 9 + 1);
-        var bottle3 = Math.floor(Math.random() * 9 + 1);
-        var bottle4 = Math.floor(Math.random() * 9 + 1);
+        var bottle1 = Math.floor(Math.random() * 11 + 1);
+        var bottle2 = Math.floor(Math.random() * 11 + 1);
+        var bottle3 = Math.floor(Math.random() * 11 + 1);
+        var bottle4 = Math.floor(Math.random() * 11 + 1);
 
             //Puts the score board up
             $("#health").text(patientsHealth);

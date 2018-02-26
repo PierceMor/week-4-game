@@ -27,25 +27,25 @@
     <!-- Game explanation --> 
     <div class="row">
         <div class="col-12">
-            <h3>
-                Treat the patient! If he gets too much medicine he dies! 
-               <br><br>
-               Remember, Medicine effects everyone differently!
-               <br><br>
-               Poor sucker....
-            </h3>
+           
         </div>
     </div>
 
     <div class="row">
+
             <!-- Patent -->
-        <div class="col-5">
-            <img class="img-fluid img-thumbnail" src="assets/images/bacta-tank1.jpg"
-             alt="Luke In Bacta Tank" class="patient">
+        <div class="col-6">
+            
+                <!--  <img src="assets/images/bacta-tank1.jpg" name=patient alt=""> -->
+            <div id=patient>
+           <!-- <img class="img-fluid img-thumbnail" id="patient" src="assets/images/bacta-tank1.jpg" 
+             alt="Luke In Bacta Tank" class="patient"> -->
+            </div>
         </div>
-        <div class="col-1"></div>
+        <div class="col-2"></div>
+
             <!-- score --> 
-        <div class="col-5">
+        <div class="col-6">
                 <h2>Patient Health: 
                     <span id=health></span>
                 </h2>
@@ -53,29 +53,48 @@
                     Patients Heart Rate:
                     <span id=playerScore></span>
                 </h2>
-                <h3>Patients saved: 
+                <h3>
+                    Patients saved: 
                     <span id=saved></span>
                 </h3>
-                <h3>Patients lost: 
+                <h3>
+                    Patients lost: 
                     <span id=lost></span>
                 </h3>
+                <p>
+                    Treat the patient! If they gets too much medicine they dies! 
+                   <br><br>
+                   Remember, Medicine effects everyone differently!
+                   <br><br>
+                   Poor sucker....
+                </p>
         </div>
     </div>
+
     <!-- Game --> 
     <div class="row">
         <div class="col-12">
-            <button type="button" id=bottle1 class="btn btn-primary btn-lg">blue Bottle</button>
-            <button type="button" id=bottle2 class="btn btn-primary btn-lg">red Bottle</button>
-            <button type="button" id=bottle3 class="btn btn-primary btn-lg">yellow Bottle</button>
-            <button type="button" id=bottle4 class="btn btn-primary btn-lg">Random bottle</button>
+            <button type="button" id=bottle1 class="btn btn-primary btn-lg">
+                    <img id="bottleimg" src="assets/images/blue-bottle.jpg"/>
+            </button>
+            <button type="button" id=bottle2 class="btn btn-primary btn-lg">
+                    <img id="bottleimg" src="assets/images/red-bottle.jpg"/>
+            </button>
+            <button type="button" id=bottle3 class="btn btn-primary btn-lg">
+                    <img id="bottleimg" src="assets/images/green-bottle.jpg"/>
+            </button>
+            <button type="button" id=bottle4 class="btn btn-primary btn-lg">
+                    <img id="bottleimg" src="assets/images/medicine_bottle.png"/>
+            </button>
         </div>
 
         <!-- Refresh feature -->
         <div class="col-12">
-                <button type="button" id=clearButton class="btn btn-secondary btn-lg">BRING ME ANOTHER!</button>
+                <button type="button" id=clearButton class="btn btn-secondary btn-lg">
+                    BRING ME ANOTHER!
+                </button>
         </div>
     </div>
-
 
 </div>
 
