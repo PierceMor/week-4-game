@@ -64,7 +64,9 @@ $(document).ready(function(){
         //      console.log("current score" + player);
         //      $("#playerscore").text(player + bottle1, bottle2, bottle3, bottle4);
         //   });
-            
+
+        
+            // super clean function that runs them funny button boys 
     function bottlemaker(bottle){
 
         player = player + bottle;
