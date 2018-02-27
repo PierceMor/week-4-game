@@ -14,11 +14,16 @@ $(document).ready(function(){
     //scoreboard
     var wins = 0;
     var patientsKilled = 0; 
+    var bottle1;
+    var bottle2;
+    var bottle3;
+    var bottle4;
+    var patientsHealth;
 
     function pictureTime() {
         //picks patients picture
         var thePatient = computerPatient[Math.floor(Math.random() * computerPatient.length)];
-        $("#patient").html("<img class='img-fluid img-thumbnail' alt='Luke In Bacta Tank' src=" + thePatient + ">")
+        $("#patient").html("<img class='img-fluid img-thumbnail' alt='Luke In Bacta Tank' src=" + thePatient + ">");
 
         
         //working text
@@ -39,20 +44,20 @@ $(document).ready(function(){
         player = 0; 
 
         //score that player must reach 
-        var patientsHealth = Math.floor(Math.random()* 101 + 19); 
+        patientsHealth = Math.floor((Math.random()* 101) + 19); 
 
         //value of the randomized buttons
-        var bottle1 = Math.floor(Math.random() * 11 + 1);
-        var bottle2 = Math.floor(Math.random() * 11 + 1);
-        var bottle3 = Math.floor(Math.random() * 11 + 1);
-        var bottle4 = Math.floor(Math.random() * 11 + 1);
+        bottle1 = Math.floor(Math.random() * 11 + 1);
+        bottle2 = Math.floor(Math.random() * 11 + 1);
+        bottle3 = Math.floor(Math.random() * 11 + 1);
+        bottle4 = Math.floor(Math.random() * 11 + 1);
 
             //Puts the score board up
             $("#health").text(patientsHealth);
             $("#playerScore").text(player);
             $("#saved").text(wins);
             $("#lost").text(patientsKilled);
-
+    }
         //Atempt at simplifying the code and making less redundant
         //   $("#bottle1", "#bottle2", "#bottle3", "#bottle4").on('click', function(){
         //      player = player + bottle1, bottle2, bottle3, bottle4; 
@@ -60,79 +65,53 @@ $(document).ready(function(){
         //      $("#playerscore").text(player + bottle1, bottle2, bottle3, bottle4);
         //   });
             
+    function bottlemaker(bottle){
+
+        player = player + bottle;
+        console.log(bottle);
+
+        $("#playerScore").text(player);
+
+        if (player === patientsHealth){
+            wins ++;
+            newGame();
+        } else if ( player > patientsHealth){
+            patientsKilled ++; 
+            newGame();
+        }
+    }
 
 
-        //redundent code, has to be a simpler way 
-        //function for first button
-        $("#bottle1").click(function(){
 
-            //adds the randomize number to players score upon button press
-            //button will be logged onto console and added to HTML
-            player = player + bottle1; 
-            console.log(bottle1);
-            $("#playerScore").text(player);
+    //redundent code, has to be a simpler way 
+    //function for first button
+    $("#bottle1").click(function(){
 
-            if (player === patientsHealth){
-                wins ++;
-                newGame();
-            } else if ( player > patientsHealth){
-                patientsKilled++; 
-                newGame();
-            }
+        bottlemaker(bottle1)
 
-        });
+    });
 
-        //function for 2nd button
-        $("#bottle2").click(function(){
+    //function for 2nd button
+    $("#bottle2").click(function(){
 
-            player = player + bottle2;
-            console.log(bottle2);
-            $("#playerScore").text(player);
+        bottlemaker(bottle2)
+    });
+    
 
-            if (player === patientsHealth){
-                wins ++;
-                newGame();
-            } else if ( player > patientsHealth){
-                patientsKilled++; 
-                newGame();
-            }
-        });
+    //function for 3rd button
+    $("#bottle3").click(function(){
+
+        bottlemaker(bottle3)
+
+    });
+
+    //function for the last button
+    $("#bottle4").click(function(){
+
+        bottlemaker(bottle4)
+
+    });
         
-
-        //function for 3rd button
-        $("#bottle3").click(function(){
-
-            player = player + bottle3;
-            console.log(bottle3);
-            $("#playerScore").text(player);
-
-            if (player === patientsHealth){
-                wins ++;
-                newGame();
-            } else if ( player > patientsHealth){
-                patientsKilled++; 
-                newGame();
-            }
-
-        });
-
-        //function for the last button
-        $("#bottle4").click(function(){
-
-            player = player + bottle4;
-            console.log(bottle4);
-            $("#playerScore").text(player);
-
-            if (player === patientsHealth){
-                wins ++;
-                newGame();
-            } else if ( player > patientsHealth){
-                patientsKilled++; 
-                newGame();
-            }
-
-        });
-            
     $("#clearButton").click(function(){
         newGame();
     });
@@ -145,6 +124,6 @@ $(document).ready(function(){
     //        patientsKilled++; 
      //       newGame();
    //     }
-    }
+    
     newGame();
 });
